@@ -6,7 +6,7 @@ html {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-color: rgb(10, 24, 74);
+    background-color: #09184a;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -56,15 +56,6 @@ html {
     filter: blur(7px);
     z-index: 0;
 }
-
-/* .lights {
-    position: absolute;
-    width: 500px;
-    height: 100px;
-    z-index: 1;
-    top: -50px;
-    background-color: rgb(10, 24, 74);
-} */
 
 .cupWrapper {
     position: relative;
@@ -355,7 +346,7 @@ html {
 
 @keyframes wave {
     2% {
-        transform: translateX(1);
+        transform: translateX(0);
     }
 
     50% {
@@ -363,6 +354,53 @@ html {
     }
 
     100% {
-        transform: translateX(1);
+        transform: translateX(0);
+    }
+}
+
+.lights {
+    position: absolute;
+    width: 425px;
+    height: 100px;
+    z-index: 0;
+    top: -260px
+}
+
+.trapezoid {
+    width: 141px;
+    height: 400px;
+    background: linear-gradient(160deg, transparent 10%, white);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: 50% 100%;
+    opacity: 0.3;
+    position: absolute;
+    right: 142px;
+    top: 0;
+    animation: trapezoid 3s reverse infinite;
+}
+
+.trapezoid:nth-child(1) {
+    transform: rotate(40deg);
+    opacity: 0.3;
+}
+
+.trapezoid:nth-child(2) {
+    transform: rotate(20deg);
+    opacity: 0.1;
+}
+
+.trapezoid:nth-child(4) {
+    transform: rotate(-20deg);
+    opacity: 0.1;
+}
+
+.trapezoid:nth-child(5) {
+    transform: rotate(-40deg);
+    opacity: 0.4;
+}
+
+@keyframes trapezoid {
+    50% {
+        opacity: 0.15;
     }
 }
