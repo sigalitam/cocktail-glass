@@ -537,3 +537,61 @@ body:has(.bubbles:hover) .glass {
 body:has(.bubbles:hover) .glass .lights {
     opacity: 1;
 }
+
+@keyframes twinkleEffect {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.005);
+    }
+}
+
+.twinkle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.twinkle::before,
+.twinkle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+        5vw 3vh white,
+        15vw 10vh white,
+        30vw 5vh white,
+        50vw 20vh white,
+        70vw 15vh white,
+        85vw 5vh white,
+        95vw 30vh white,
+        40vw 50vh white,
+        60vw 70vh white,
+        80vw 90vh white;
+    animation: twinkleEffect 2s infinite alternate ease-in-out;
+}
+
+.twinkle::after {
+    box-shadow:
+        10vw 4vh white,
+        25vw 12vh white,
+        45vw 2vh white,
+        65vw 18vh white,
+        75vw 30vh white,
+        90vw 50vh white,
+        95vw 80vh white;
+    animation-delay: 1s;
+}
