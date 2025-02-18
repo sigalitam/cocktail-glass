@@ -5,7 +5,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif;
+    font-family: "Playwrite IT Moderna", serif;
     background-color: #09184a;
     box-sizing: border-box;
     margin: 0;
@@ -18,6 +18,8 @@ html {
     position: relative;
     align-items: center;
     flex-direction: column;
+    transition: all 0.5s ease-in-out;
+    z-index: 0;
 }
 
 .base {
@@ -44,16 +46,16 @@ html {
 .base::before {
     content: '';
     background-color: black;
-    width: 290px;
-    height: 9px;
-    opacity: 0.4;
+    width: 278px;
+    height: 26px;
+    opacity: 0.15;
     border-radius: 40%;
     display: block;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 29%) scaleX(1.3) scaleY(0.5);
-    bottom: 0;
-    filter: blur(7px);
+    bottom: -4px;
+    filter: blur(3px);
     z-index: 0;
 }
 
@@ -192,7 +194,6 @@ html {
     justify-content: center;
     font-size: 2.6em;
     color: #3CCD91;
-    font-family: "Playwrite IT Moderna", serif;
     font-weight: 600;
     line-height: 43px;
     transform: rotate(-15deg);
@@ -321,11 +322,11 @@ html {
 
 .wave {
     background: #FF469A;
-    border-radius: 50% 50% 0 0;
+    border-radius: 50% 100% 0 0;
     position: fixed;
     width: 200%;
     height: 40%;
-    animation: wave 14s -3s linear infinite;
+    animation: wave 18s -3s linear infinite;
     opacity: 0.8;
     bottom: 0;
     left: -100px;
@@ -341,7 +342,7 @@ html {
 .wave:nth-child(1) {
     animation: wave 22s -1s linear reverse infinite;
     opacity: 0.13;
-    height: 45%;
+    height: 43%;
 }
 
 @keyframes wave {
@@ -352,10 +353,6 @@ html {
     50% {
         transform: translateX(-25%);
     }
-
-    100% {
-        transform: translateX(0);
-    }
 }
 
 .lights {
@@ -363,7 +360,9 @@ html {
     width: 425px;
     height: 100px;
     z-index: 0;
-    top: -260px
+    top: -260px;
+    transition: all 0.5s ease-in-out;
+    opacity: 0.5;
 }
 
 .trapezoid {
@@ -386,7 +385,7 @@ html {
 
 .trapezoid:nth-child(2) {
     transform: rotate(20deg);
-    opacity: 0.1;
+    opacity: 0.15;
 }
 
 .trapezoid:nth-child(4) {
@@ -396,11 +395,145 @@ html {
 
 .trapezoid:nth-child(5) {
     transform: rotate(-40deg);
-    opacity: 0.4;
+    opacity: 0.2;
 }
 
-@keyframes trapezoid {
-    50% {
-        opacity: 0.15;
+.bubbles {
+    position: absolute;
+    width: 400px;
+    height: calc(50vh - 50px);
+    z-index: 0;
+    overflow: hidden;
+    top: 0;
+    z-index: 5;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: bubble 12s infinite ease-in;
+}
+
+.bubble:nth-child(1) {
+    width: 20px;
+    height: 20px;
+    left: 10%;
+    animation-duration: 8s;
+}
+
+.bubble:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+    width: 10px;
+    height: 10px;
+    left: 35%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(4) {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 11s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(5) {
+    width: 25px;
+    height: 25px;
+    left: 55%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(6) {
+    width: 15px;
+    height: 15px;
+    left: 65%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(7) {
+    width: 30px;
+    height: 30px;
+    left: 70%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(8) {
+    width: 25px;
+    height: 25px;
+    left: 80%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(9) {
+    width: 15px;
+    height: 15px;
+    left: 70%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+@keyframes bubble {
+    0% {
+        bottom: -100px;
+        transform: translateX(0);
+        opacity: 0.1;
     }
+
+    50% {
+        transform: translate(-100%);
+    }
+
+    100% {
+        bottom: 1080px;
+        transform: translateX(100%);
+    }
+}
+
+.footer {
+    color: #09184a;
+    font-size: 20px;
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    font-size: 22px;
+}
+
+.glass:hover,
+body:has(.bubbles:hover) .glass {
+    transform: scale(1.05);
+}
+
+.glass:hover .lights,
+body:has(.bubbles:hover) .glass .lights {
+    opacity: 1;
 }
