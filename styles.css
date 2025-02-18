@@ -32,7 +32,7 @@ html {
 
 .glass:hover,
 body:has(.bubbles:hover) .glass {
-    transform: scale(1.03);
+    transform: scale(1.035);
 }
 
 .base {
@@ -223,11 +223,16 @@ body:has(.bubbles:hover) .glass {
     text-align: center;
     color: var(--primary-color);
     text-decoration: none;
+    transition: all 0.4s ease-in-out;
 }
 
 .ballLogo:hover {
     box-shadow: 0 0 4px 6px #00000020;
     animation-play-state: paused;
+}
+
+.ballLogo:hover a {
+    color: var(--accent-color);
 }
 
 .star {
@@ -556,8 +561,8 @@ body:has(.bubbles:hover) .glass .lights {
 }
 
 .footer a:hover {
-    text-decoration: underline;
     font-size: 22px;
+    text-shadow: 0 0 10px #00000040;
 }
 
 .twinkle {
