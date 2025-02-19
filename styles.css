@@ -41,7 +41,7 @@ html {
 
 .glass:hover,
 body:has(.bubbles:hover) .glass {
-    transform: scale(1.04);
+    transform: scale(1.1);
 }
 
 .base {
