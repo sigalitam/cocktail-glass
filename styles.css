@@ -20,19 +20,28 @@ html {
     padding: 0;
 }
 
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .glass {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     position: relative;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     z-index: 0;
 }
 
 .glass:hover,
 body:has(.bubbles:hover) .glass {
-    transform: scale(1.035);
+    transform: scale(1.04);
 }
 
 .base {
@@ -214,6 +223,8 @@ body:has(.bubbles:hover) .glass {
     animation: ballLogo 1.2s reverse infinite ease-in;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    min-width: 45px;
+    min-height: 45px;
 }
 
 .ballLogo a {
@@ -227,7 +238,7 @@ body:has(.bubbles:hover) .glass {
 }
 
 .ballLogo:hover {
-    box-shadow: 0 0 4px 6px #00000020;
+    box-shadow: 0 8px 0 #00000030;
     animation-play-state: paused;
 }
 
@@ -622,6 +633,66 @@ body:has(.bubbles:hover) .glass .lights {
 
     50% {
         opacity: 1;
-        transform: scale(1.005);
+        transform: scale(1.01);
+    }
+}
+
+.secondGlass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    z-index: 1;
+    transform: rotate(45deg) scale(0.9) translate(2000px, 1000px);
+    filter: hue-rotate(40deg);
+}
+
+.btnClickMe {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 20px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    padding: 12px 24px;
+    right: 10%;
+    bottom: 10%;
+    box-shadow: 0 6px 0 2px #00000030;
+    font-size: 20px;
+    text-shadow: 0 0 4px #00000040;
+    animation: btnClickMeMoved 1s infinite alternate ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnClickMe:hover {
+    box-shadow: 0 2px 0 2px #00000040;
+    animation-play-state: paused;
+    filter: brightness(1.1);
+}
+
+@keyframes btnClickMeMoved {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+#toggleAnimate:checked+label+.secondGlass {
+    animation: secondGlassEffect 3s ease-in-out forwards;
+}
+
+@keyframes secondGlassEffect {
+    50% {
+        transform: rotate(-45deg) scale(0.9) translate(435px, 155px);
     }
 }
