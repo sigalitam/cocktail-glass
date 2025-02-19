@@ -2,6 +2,10 @@
 
 Welcome to my submission for **Reeco's Frontend Challenge: Code Your Cocktail**. This project is a celebration of pure CSS mastery, designed to capture the essence of a glowing cocktail through nothing but HTML and CSS. No images, no SVGs—just inventive code that brings your drink to life.
 
+
+https://github.com/user-attachments/assets/c1a9991b-ad4f-42cc-b77b-c00c27b4f826
+
+
 ## Full Description
 
 ### The Concept
@@ -22,3 +26,5 @@ This project was a playground for exploring the boundaries of CSS.
 By leveraging modern CSS properties and creative animations, I created an engaging and visually stunning cocktail. It’s not just a static design; it’s a dynamic piece of art that celebrates innovation in front-end development.
 
 Feel free to explore, provide feedback, or contribute. Cheers to creative coding and great design!
+
+
