@@ -650,12 +650,13 @@ body:has(.bubbles:hover) .glass .lights {
 }
 
 .btnClickMe {
-    display: inline-block;
-    background: #ff9800;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-width: 0 0 8px;
+    background: #d19300;
     color: #fff;
     display: flex;
     align-items: center;
-    text-align: center;
     justify-content: center;
     text-decoration: none;
     border-radius: 20px;
@@ -665,17 +666,37 @@ body:has(.bubbles:hover) .glass .lights {
     padding: 12px 24px;
     right: 10%;
     bottom: 10%;
-    box-shadow: 0 6px 0 2px #00000030;
+    box-shadow: 0 6px 0 6px #00000030;
     font-size: 20px;
     text-shadow: 0 0 4px #00000040;
     animation: btnClickMeMoved 1s infinite alternate ease-in-out;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.btnClickMe:after {
+    background-clip: padding-box;
+    background-color: #ffb300;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
 }
 
 .btnClickMe:hover {
-    box-shadow: 0 2px 0 2px #00000040;
+    box-shadow: 0 3px 0 2px #00000040;
     animation-play-state: paused;
-    filter: brightness(1.1);
+    filter: brightness(0.9);
+    border-width: 0 0 4px;
+}
+
+.btnClickMe:after:hover {
+    border-width: 0 0 4px;
 }
 
 @keyframes btnClickMeMoved {
