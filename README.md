@@ -1,4 +1,4 @@
-# The Glowing CSS Cocktail: Reeco's Frontend Challenge 🍹✨
+# Glowing CSS Cocktail: Reeco's Frontend Challenge 🍹✨
 
 Welcome to my submission for **Reeco's Frontend Challenge: Code Your Cocktail**. This project is a celebration of pure CSS mastery, designed to capture the essence of a glowing cocktail through nothing but HTML and CSS. No images, no SVGs—just inventive code that brings your drink to life.
 
